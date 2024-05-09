@@ -2,7 +2,7 @@ from django.shortcuts import render
 from item.models import Category, Item
 
 def index(request):
-    items = Item.objects.filter(isSold=False) [0:6]
+    items = Item.objects.filter(isSold=False) [0:20]
     categories = Category.objects.all()
 
     return render(request, 'core/index.html', {

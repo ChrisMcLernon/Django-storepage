@@ -16,8 +16,11 @@ class Item(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
     price=models.FloatField()
+    quantity=models.IntegerField(blank=True, null=True)
     img=models.ImageField(upload_to='itemImages', blank=True, null=True)
     isSold = models.BooleanField(default=False)
+    isSale = models.BooleanField(default=False)
+    isNew = models.BooleanField(default=False)
     createdBy = models.ForeignKey(User, related_name='items', on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
 

@@ -3,32 +3,34 @@
 {% load static %}
 
 <html>
-    <div>
+    <div class='font-mono'>
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="https://cdn.tailwindcss.com"></script>
             <title>{%block title%}{% endblock%}</title>
         </head>
-        <body>
-            <nav class='relative inset-x-0 top-0 py-2 px-6 flex justify-between items-center bg-gray-500'>
-                <a href='/' class='text-xl font-semibold'><img class='px-1 py-1 text-center text-white h-10 w-10 opacity-50 hover:opacity-100' src='{% static 'media/publicimages/logo-nav.png' %}' ></img></a>
+        <header class=''>
+            <nav class='relative inset-x-0 top-0 py-2 px-6 flex justify-between items-center bg-blue-500'>
+                <a href='/' class='text-xl font-semibold'><img class='px-1 py-1 text-center text-white size-10 hover:animate-pulse' src='{% static 'media/publicimages/logo-nav.png' %}' ></img></a>
 
                 <div class='space-x-6 flex justify-end items-center'>
-                    <a href='{% url 'contact' %}' class='text-lg font-semibold text-white hover:text-gray-300'>Contact</a>
+                    <a href='{% url 'contact' %}' class='text-lg font-semibold text-gray-200 hover:text-gray-300'>Contact</a>
 
-                    <a href='#' class='px-6 py-2 text-lg sm:text-sm font-semibold bg-teal-200 text-black rounded-xl hover:bg-teal-500'>Sign Up</a>
-                    <a href='#' class='px-6 py-2 text-lg sm:text-sm font-semibold bg-teal-200 text-black rounded-xl hover:bg-teal-500'>Log in</a>
+                    <a href='#' class='px-6 py-2 text-lg sm:text-sm font-semibold bg-red-200 text-black rounded-xl hover:bg-red-300 nowrap'>Sign Up</a>
+                    <a href='#' class='px-6 py-2 text-lg sm:text-sm font-semibold bg-red-200 text-black rounded-xl hover:bg-red-300 nowrap'>Log in</a>
                 </div>
             </nav>
+        </header>
+        <body>
             <div class='px-6 py-6'>
                 {% block content%}
                 {% endblock %}
             </div>
-            <footer class='relative inset-x-0 bottom-0 py-4 px-6 border border-gray-500 bg-gray-700 grid grid-cols-1 grid-row-2 gap-4'>
+            <footer class='min-width-full relative inset-x-0 bottom-0 py-4 px-6 bg-blue-500 grid grid-cols-1 grid-row-2 gap-4'>
                 <div class='px-20 pt-8'>
                     <div class='col-start-1 col-span-1 row-start-1 row-span-1 grid grid-col-4 grid-row-1'>
-                        <a href='/' class=''><img class='col-start-1 col-span-1 text-white h-10 w-10 opacity-50 hover:opacity-100' src='{% static 'media\publicimages\logo-nav.png' %}' alt='Amazonot'></img></a>
+                        <a href='/' class=''><img class='col-start-1 col-span-1 text-white size-10 opacity-50 hover:opacity-100' src='{% static 'media\publicimages\logo-nav.png' %}' alt='Amazonot'></img></a>
                         
                         <ul class='col-start-3 col-span-2 flex justify-end gap-8 pr-10' >
                             <li><a href='https://twitter.com/' target='_blank' class=''><img class='px-1 py-1 text-center text-white opacity-30 hover:opacity-100' src='{% static 'media/publicimages/x-footer.png' %}' alt='X'></img></a></li>
@@ -40,38 +42,38 @@
                     </div>
                     <div class='col-start-1 col-span-1 row-start-2 row-span-1'>
                         <div class='py-5 flex justify-start m-auto text-md flex-row gap-4'>
-                            <p class='text-teal-500'>Products you love</p>
+                            <p class='text-red-300'>Products you love</p>
                             <p class='text-gray-200'>Quality you trust</p>
                         </div>
-                        <div class='col-start-2 cols-span-1 flex justify-end gap-20 whitespace-nowrap pr-20'>
+                        <div class='col-start-2 cols-span-1 flex flex-col md:flex-row justify-end md:gap-20 whitespace-nowrap pr-20'>
                             <div class=''>
-                                <h3 class='font-bold text-white'>Menu</h3>
+                                <h3 class='font-bold text-transparent text-xs md:text-white'>Menu</h3>
 
                                 <ul class='text-gray-400'>
-                                    <li><a href='#' class='hover:text-gray-100'>About</a></li>
-                                    <li><a href='{% url 'contact' %}' class='hover:text-gray-100'>Contact</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Privacy policy</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Terms of Use</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>About</a></li>
+                                    <li><a href='{% url 'contact' %}' class='hover:text-red-00'>Contact</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Privacy policy</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Terms of Use</a></li>
                                 </ul>
                             </div>
                             <div class=''>
-                                <h3 class='font-bold text-white'>Customer Service</h3>
+                                <h3 class='font-bold text-transparent text-xs md:text-white'>Customer Service</h3>
 
                                 <ul class='text-gray-400'>
-                                    <li><a href='#' class='hover:text-gray-100'>About</a></li>
-                                    <li><a href='{% url 'contact' %}' class='hover:text-gray-100'>Contact</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Privacy policy</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Terms of Use</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>About</a></li>
+                                    <li><a href='{% url 'contact' %}' class='hover:text-red-300'>Contact</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Privacy policy</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Terms of Use</a></li>
                                 </ul>
                             </div>
                             <div class=''>
-                                <h3 class='font-bold text-white'>Contact</h3>
+                                <h3 class='font-bold text-transparent text-xs md:text-white'>Contact</h3>
 
                                 <ul class='text-gray-400'>
-                                    <li><a href='#' class='hover:text-gray-100'>About</a></li>
-                                    <li><a href='{% url 'contact' %}' class='hover:text-gray-100'>Contact</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Privacy policy</a></li>
-                                    <li><a href='#' class='hover:text-gray-100'>Terms of Use</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>About</a></li>
+                                    <li><a href='{% url 'contact' %}' class='hover:text-red-300'>Contact</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Privacy policy</a></li>
+                                    <li><a href='#' class='hover:text-red-300'>Terms of Use</a></li>
                                 </ul>
                             </div>
                         </div>

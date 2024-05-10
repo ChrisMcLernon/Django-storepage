@@ -21,6 +21,7 @@ class Item(models.Model):
     isSold = models.BooleanField(default=False)
     isSale = models.BooleanField(default=False)
     isNew = models.BooleanField(default=False)
+    isBestseller = models.BooleanField(default=False)
     createdBy = models.ForeignKey(User, related_name='items', on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True)
 
